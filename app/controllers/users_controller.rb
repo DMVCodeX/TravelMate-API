@@ -16,8 +16,8 @@ class UsersController < ApplicationController
       name: params[:name].capitalize,
       email: params[:email].downcase,
       image: params[:image],
-      # password: params[:password],
-      # password_confirmation: params[:password_confirmation],
+      password: params[:password],
+      password_confirmation: params[:password_confirmation],
     )
 
     if @user.save
