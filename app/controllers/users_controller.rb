@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(
-      name: params[:name].downcase,
+      name: params[:name].capitalize,
       email: params[:email].downcase,
       image: params[:image],
       # password: params[:password],
