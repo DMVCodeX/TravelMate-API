@@ -46,4 +46,15 @@ class UsersController < ApplicationController
 
     render json: { message: "User sucessfully deleted" }
   end
+
+  def update_password
+    @user = User.find_by(id: params[:id])
+
+    @user.update(
+      password: params[:name],
+      password_confirmation: params[:password_confirmation],
+    )
+    render :show
+    # render json: { message: "Password has been updated" }
+  end
 end
